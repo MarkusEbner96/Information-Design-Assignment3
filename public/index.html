@@ -6,6 +6,14 @@
 <title>Wien fährt um — Vienna's Electric Mobility Transition</title>
 <meta name="description" content="An interactive data story about the slow, fast, and social speeds of Vienna's transition to electric vehicles, based on official MA23 / Statistik Austria registration data.">
 <link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -18,6 +26,7 @@
     <a class="nav-link" href="#neuzulassungen">New Registrations</a>
     <a class="nav-link" href="#gebraucht">Used Market</a>
     <a class="nav-link" href="#comparison">Comparison</a>
+    <a class="nav-link" href="#raum">Vienna from above</a>
     <a class="nav-link" href="#conclusion">Methodology</a>
   </div>
 </nav>
@@ -216,7 +225,64 @@
       on its own.</p>
   </section>
 
-  <!-- View 6: Conclusion & Methodology -->
+  <!-- View 6: Spatial dimension — Vienna from above (3D) -->
+  <section id="raum">
+    <span class="section-label label-compare">The spatial dimension</span>
+    <h2 class="section-title">Vienna from above: where the transition lands first</h2>
+    <p class="section-sub">
+      The charts above flatten Vienna into a single line. But the electric turn does
+      not arrive evenly across the city. Here each of the 23 districts is a tower:
+      its <strong>height</strong> encodes car density, its <strong>colour</strong> the
+      electric share (grey → blue). Drag the year slider and watch wealthier, central
+      districts light up blue first while the outer districts stay grey longer.
+    </p>
+    <div class="callout purple">
+      <div class="callout-title">The transition is unevenly distributed</div>
+      <div class="callout-text">Innere Stadt, Hietzing and Döbling turn blue early, while Favoriten, Simmering and
+        Rudolfsheim-Fünfhaus stay grey for years — e-mobility reaches affluent districts first.
+        This spatial inequality is invisible in a single line chart.</div>
+    </div>
+
+    <div class="controls-row">
+      <span class="ctrl-label">Drag to rotate · scroll to zoom · click a district for details</span>
+      <div class="city-year">
+        <span class="ctrl-label">Year</span>
+        <input type="range" id="city-year" min="2018" max="2024" step="1" value="2024">
+        <span class="city-year-out" id="city-year-out">2024</span>
+      </div>
+    </div>
+
+    <div class="chart-panel city-panel">
+      <div id="city3d-canvas" class="city3d-canvas"></div>
+      <div class="city3d-info" id="city3d-info">
+        <div class="city3d-info-name" id="info-name">—</div>
+        <div class="city3d-info-row"><span>Car density</span><span id="info-density">—</span></div>
+        <div class="city3d-info-row"><span>EV share <span id="info-year">2024</span></span><span class="ev" id="info-ev">—</span></div>
+        <div class="city3d-info-row"><span>EV share 2024</span><span id="info-ev24">—</span></div>
+      </div>
+      <div class="city3d-hint" id="city3d-hint">Click a tower →</div>
+    </div>
+
+    <div class="legend-row city-legend">
+      <div class="legend-item" style="display:flex;align-items:center;gap:6px;">↕ Height = car density (cars / 1,000 residents)</div>
+      <div class="legend-item" style="display:flex;align-items:center;gap:6px;">
+        EV share:
+        <span style="display:inline-block;width:80px;height:8px;border-radius:2px;background:linear-gradient(90deg,#888780,#378add);"></span>
+        low → high
+      </div>
+    </div>
+    <p class="chart-hint"><strong>Try it:</strong> rotate and zoom with the mouse, drag the year slider to animate tower
+      height and colour, and click a district to open its info panel.</p>
+    <p class="fg-note">
+      Note on data: the district <strong>boundaries are real</strong> — scale-accurate, from the City of Vienna's open
+      geodata (OGD, <em>Bezirksgrenzen Wien</em>). The per-district density and EV-share <strong>values are illustrative
+      placeholders</strong>, because the official MA23 tables 3.1.8–3.1.10 are city-wide aggregates with no per-district
+      breakdown of drive type. Real per-district figures would come from data.gv.at
+      ("Pkw-Bestand nach Kilowatt Leistung – Bezirke Wien").
+    </p>
+  </section>
+
+  <!-- View 7: Conclusion & Methodology -->
   <section id="conclusion">
     <span class="section-label label-compare">Takeaways</span>
     <h2 class="section-title">What this means for Vienna's transition</h2>
@@ -253,6 +319,9 @@
         <li><strong>Filtering via legend</strong> — click legend entries to isolate or hide series (Sections 2 and 5).</li>
         <li><strong>Zooming</strong> — scroll/pinch-zoom into a year range on the used-car bar chart (Section 3).</li>
         <li><strong>Hover tooltips</strong> — exact values on demand across every chart.</li>
+        <li><strong>3D spatial encoding</strong> — a rotatable, zoomable district model (Three.js) where height and
+          colour encode two variables at once, with a year slider for temporal animation and click-to-inspect
+          (Section "Vienna from above").</li>
       </ul>
     </div>
   </section>
@@ -268,5 +337,6 @@
 <script src="js/charts.js"></script>
 <script src="js/main.js"></script>
 <script src="js/fleet-grid.js"></script>
+<script type="module" src="js/city-3d.js"></script>
 </body>
 </html>

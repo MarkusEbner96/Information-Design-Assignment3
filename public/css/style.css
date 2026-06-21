@@ -186,6 +186,42 @@ section:last-of-type { border-bottom: none; }
 @keyframes fg-pop { 0%,100% { transform: scale(1); } 50% { transform: scale(1.45); } }
 .fg-car.popping { animation: fg-pop 0.22s ease; }
 
+/* ---- 3D city ("Vienna from above") ------------------------------------- */
+.city-year { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.city-year input[type="range"] { width: 140px; accent-color: var(--accent); cursor: pointer; }
+.city-year-out { font-size: 12px; color: var(--text-soft); min-width: 30px; text-align: right;
+  font-variant-numeric: tabular-nums; }
+
+.city-panel { padding: 0; overflow: hidden; }
+.city3d-canvas { position: relative; width: 100%; height: 460px; cursor: grab; }
+.city3d-canvas:active { cursor: grabbing; }
+.city3d-canvas canvas { display: block; }
+
+.city3d-info {
+  position: absolute; top: 14px; right: 14px; width: 184px;
+  background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius);
+  padding: 12px 14px; font-size: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+  display: none;
+}
+.city3d-info.visible { display: block; }
+.city3d-info-name { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+.city3d-info-row { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 4px; color: var(--text-soft); }
+.city3d-info-row span:last-child { color: var(--text); font-variant-numeric: tabular-nums; }
+.city3d-info-row .ev { color: var(--accent); font-weight: 600; }
+
+.city3d-hint {
+  position: absolute; left: 14px; bottom: 14px;
+  font-size: 11px; color: var(--text-faint);
+  background: var(--bg); border-radius: 6px; padding: 4px 9px; opacity: 0.9;
+}
+.city-legend { margin-top: 10px; }
+
+@media (max-width: 720px) {
+  .city3d-canvas { height: 340px; }
+  .city3d-info { width: 150px; }
+  .city-year input[type="range"] { width: 100px; }
+}
+
 footer {
   padding: 28px 0 50px; text-align: center; font-size: 12px; color: var(--text-faint);
 }
