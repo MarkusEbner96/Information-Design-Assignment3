@@ -122,7 +122,11 @@
       <button class="filter-btn" data-category="Krafträder">Motorcycles</button>
       <button class="filter-btn" data-category="Lkw">Trucks (Lkw)</button>
       <button class="filter-btn" data-category="Sonstige">Other</button>
-      <label class="toggle-switch" style="margin-left:auto;">
+      <label class="toggle-switch" id="bestand-baseline-label" style="margin-left:auto;">
+        <input type="checkbox" id="bestand-baseline-toggle">
+        Start axis at 400k
+      </label>
+      <label class="toggle-switch">
         <input type="checkbox" id="bestand-percent-toggle">
         Show as 100% share
       </label>
@@ -137,7 +141,8 @@
       <div class="legend-item" style="display:flex;align-items:center;gap:5px;"><span class="legend-swatch" style="background:#378add"></span>Electric</div>
     </div>
     <p class="chart-hint"><strong>Try it:</strong> drag the handles in the small strip below the chart to brush a custom
-      time window. Switch vehicle category, or toggle the 100% share view. Hover the chart for exact yearly counts.</p>
+      time window. Switch vehicle category, toggle the 100% share view, or zoom the axis to start at 400k to magnify the
+      growing hybrid/electric bands. Hover the chart for exact yearly counts.</p>
   </section>
 
   <!-- View 3: New registrations (Neuzulassungen) -->

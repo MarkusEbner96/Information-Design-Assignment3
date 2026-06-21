@@ -31,9 +31,19 @@
   });
 
   const percentToggle = document.getElementById("bestand-percent-toggle");
+  const baselineToggle = document.getElementById("bestand-baseline-toggle");
+  const baselineLabel = document.getElementById("bestand-baseline-label");
+
   percentToggle.addEventListener("change", () => {
     bestandPercent = percentToggle.checked;
     areaChart.setPercent(bestandPercent);
+    // The 400k baseline only makes sense for absolute counts — disable it in % mode.
+    baselineToggle.disabled = bestandPercent;
+    baselineLabel.classList.toggle("disabled", bestandPercent);
+  });
+
+  baselineToggle.addEventListener("change", () => {
+    areaChart.setBaseline(baselineToggle.checked ? 400000 : 0);
   });
 
   // ---- Section 2: New registrations (multi-line, % share) -------------

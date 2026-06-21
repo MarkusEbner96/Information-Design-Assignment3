@@ -53,7 +53,7 @@ function createStackedAreaChart(selector, initialRows) {
   const y = d3.scaleLinear();
   const xContext = d3.scaleLinear();
 
-  let state = { rows: initialRows, percent: false, domain: null };
+  let state = { rows: initialRows, percent: false, domain: null, baseline: 0 };
 
   const stackGen = d3.stack().keys(FUELS);
 
@@ -89,9 +89,20 @@ function createStackedAreaChart(selector, initialRows) {
     stackGen.offset(offset);
     const series = stackGen(visibleRows);
 
-    y.domain(state.percent ? [0, 1] : [0, d3.max(series, (s) => d3.max(s, (d) => d[1])) || 1])
-      .range([innerH, 0])
-      .nice();
+    // In absolute mode an optional non-zero baseline (e.g. 400k) zooms into the
+    // upper bands; values below it are clamped to the axis so the stacked areas
+    // still render cleanly. The baseline is ignored in 100%-share mode.
+    if (state.percent) {
+      y.domain([0, 1]).range([innerH, 0]).nice();
+      y.clamp(false);
+    } else {
+      const maxV = d3.max(series, (s) => d3.max(s, (d) => d[1])) || 1;
+      // Only apply the baseline when it sits safely below the data max (e.g. the
+      // 400k zoom is meaningless for small categories like motorcycles ~85k).
+      const base = state.baseline > 0 && state.baseline < maxV * 0.9 ? state.baseline : 0;
+      y.domain([base, maxV]).range([innerH, 0]).nice();
+      y.clamp(base > 0);
+    }
 
     const area = d3
       .area()
@@ -196,6 +207,10 @@ function createStackedAreaChart(selector, initialRows) {
     },
     setPercent(percent) {
       state.percent = percent;
+      render();
+    },
+    setBaseline(value) {
+      state.baseline = value;
       render();
     },
     resize: render,
