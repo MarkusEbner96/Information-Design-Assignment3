@@ -65,6 +65,47 @@
         decades to fully replace the existing stock — this is the "fleet inertia" problem.</div>
     </div>
 
+    <!-- Animated Fleet Grid -->
+    <div class="fg-wrap">
+      <div class="fg-yr-row">
+        <div class="fg-yr-big" id="fg-yr">2011</div>
+        <div class="fg-yr-label">Vienna's car fleet by drive type</div>
+      </div>
+      <div class="fg-stats">
+        <div class="fg-stat">
+          <div class="fg-stat-pct" style="color:#5F5E5A" id="fg-fp">—</div>
+          <div class="fg-stat-n" style="color:#888780" id="fg-fn">—</div>
+          <div class="fg-stat-l">Fossil</div>
+        </div>
+        <div class="fg-stat">
+          <div class="fg-stat-pct" style="color:#0F6E56" id="fg-hp">—</div>
+          <div class="fg-stat-n" style="color:#1D9E75" id="fg-hn">—</div>
+          <div class="fg-stat-l">Hybrid</div>
+        </div>
+        <div class="fg-stat">
+          <div class="fg-stat-pct" style="color:#185FA5" id="fg-ep">—</div>
+          <div class="fg-stat-n" style="color:#378ADD" id="fg-en">—</div>
+          <div class="fg-stat-l">Electric (BEV)</div>
+        </div>
+      </div>
+      <div class="fg-grid" id="fg-grid"></div>
+      <div class="fg-ctrl">
+        <button class="fg-pbtn" id="fg-pbtn" aria-label="Play / Pause">
+          <svg width="14" height="14" viewBox="0 0 14 14" id="fg-pico">
+            <polygon points="3,2 11,7 3,12" fill="var(--text-soft)"/>
+          </svg>
+        </button>
+        <input type="range" id="fg-slider" min="2011" max="2024" value="2011" step="1" style="flex:1">
+        <span class="fg-yr-out" id="fg-yout">2011</span>
+      </div>
+      <div class="fg-legend">
+        <div class="fg-li"><div class="fg-sw" style="background:#B4B2A9"></div>Fossil (petrol/diesel)</div>
+        <div class="fg-li"><div class="fg-sw" style="background:#1D9E75"></div>Hybrid (HEV/PHEV)</div>
+        <div class="fg-li"><div class="fg-sw" style="background:#378ADD"></div>Electric (BEV)</div>
+      </div>
+      <div class="fg-note">Each icon represents ~3,500 vehicles · 200 icons = proportional cross-section of Vienna's car fleet · Source: MA23 Vienna (Tab. 3.1.8)</div>
+    </div>
+
     <div class="controls-row" id="bestand-category-filter">
       <span class="ctrl-label">Vehicle category:</span>
       <button class="filter-btn active" data-category="Insgesamt">All vehicles</button>
@@ -226,5 +267,6 @@
 <script src="js/data.js"></script>
 <script src="js/charts.js"></script>
 <script src="js/main.js"></script>
+<script src="js/fleet-grid.js"></script>
 </body>
 </html>

@@ -146,6 +146,46 @@ section:last-of-type { border-bottom: none; }
 .methodology li { margin-bottom: 6px; }
 .source-list a { color: var(--accent); text-decoration: none; }
 
+/* ---- Fleet Grid --------------------------------------------------------- */
+.fg-wrap { padding: 20px 0 10px; }
+.fg-yr-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 2px; }
+.fg-yr-big { font-size: 52px; font-weight: 500; color: var(--text); line-height: 1; }
+.fg-yr-label { font-size: 13px; color: var(--text-soft); }
+.fg-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 14px 0 12px; }
+.fg-stat { background: var(--bg-soft-2); border-radius: 8px; padding: 10px 12px; }
+.fg-stat-pct { font-size: 22px; font-weight: 500; line-height: 1; }
+.fg-stat-n { font-size: 11px; margin-top: 1px; opacity: 0.65; }
+.fg-stat-l { font-size: 11px; color: var(--text-soft); margin-top: 3px; }
+.fg-grid { display: flex; flex-wrap: wrap; gap: 3px; margin: 4px 0 12px; }
+.fg-car { width: 28px; height: 14px; flex-shrink: 0; }
+.fg-car svg { display: block; }
+.fg-car.fossil  .fg-body { fill: #B4B2A9; }
+.fg-car.fossil  .fg-roof { fill: #888780; }
+.fg-car.hybrid  .fg-body { fill: #1D9E75; }
+.fg-car.hybrid  .fg-roof { fill: #0F6E56; }
+.fg-car.electric .fg-body { fill: #378ADD; }
+.fg-car.electric .fg-roof { fill: #185FA5; }
+.fg-ctrl { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.fg-pbtn {
+  width: 34px; height: 34px; flex-shrink: 0;
+  border: 1px solid var(--border-strong); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; background: transparent;
+  transition: background 0.15s;
+}
+.fg-pbtn:hover { background: var(--bg-soft); }
+.fg-yr-out { font-size: 12px; color: var(--text-soft); min-width: 28px; text-align: right; }
+.fg-legend { display: flex; gap: 16px; flex-wrap: wrap; }
+.fg-li { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-soft); }
+.fg-sw { width: 14px; height: 9px; border-radius: 2px; flex-shrink: 0; }
+.fg-note {
+  font-size: 10px; color: var(--text-faint);
+  margin-top: 10px; padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+@keyframes fg-pop { 0%,100% { transform: scale(1); } 50% { transform: scale(1.45); } }
+.fg-car.popping { animation: fg-pop 0.22s ease; }
+
 footer {
   padding: 28px 0 50px; text-align: center; font-size: 12px; color: var(--text-faint);
 }
