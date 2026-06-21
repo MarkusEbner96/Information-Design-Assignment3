@@ -231,16 +231,18 @@
     <h2 class="section-title">Vienna from above: where the transition lands first</h2>
     <p class="section-sub">
       The charts above flatten Vienna into a single line. But the electric turn does
-      not arrive evenly across the city. Here each of the 23 districts is a tower:
-      its <strong>height</strong> encodes car density, its <strong>colour</strong> the
-      electric share (grey → blue). Drag the year slider and watch wealthier, central
-      districts light up blue first while the outer districts stay grey longer.
+      not arrive evenly across the city. Here each of the 23 districts is a tower: its
+      <strong>height</strong> encodes car density, and its <strong>colour</strong> the
+      electric share — on a five-class scale from light grey (almost none) through teal
+      to deep blue (highest). As you drag the year slider the whole city follows Vienna's
+      real city-wide adoption curve, but affluent central districts climb through far more
+      colour classes than the outer ones. Click a tower for its full drive-type breakdown.
     </p>
     <div class="callout purple">
       <div class="callout-title">The transition is unevenly distributed</div>
-      <div class="callout-text">Innere Stadt, Hietzing and Döbling turn blue early, while Favoriten, Simmering and
-        Rudolfsheim-Fünfhaus stay grey for years — e-mobility reaches affluent districts first.
-        This spatial inequality is invisible in a single line chart.</div>
+      <div class="callout-text">Innere Stadt, Hietzing and Döbling reach the deep-blue classes early, while Favoriten,
+        Simmering and Rudolfsheim-Fünfhaus stay in the grey classes for years — e-mobility reaches affluent districts
+        first. This spatial inequality is invisible in a single line chart.</div>
     </div>
 
     <div class="controls-row">
@@ -257,28 +259,38 @@
       <div class="city3d-info" id="city3d-info">
         <div class="city3d-info-name" id="info-name">—</div>
         <div class="city3d-info-row"><span>Car density</span><span id="info-density">—</span></div>
-        <div class="city3d-info-row"><span>EV share <span id="info-year">2024</span></span><span class="ev" id="info-ev">—</span></div>
-        <div class="city3d-info-row"><span>EV share 2024</span><span id="info-ev24">—</span></div>
+        <div class="city3d-info-sub">Drive mix · <span id="info-year">2024</span></div>
+        <div class="city3d-info-row"><span><span class="ci-sw" style="background:#888780"></span>Combustion</span><span id="info-fossil">—</span></div>
+        <div class="city3d-info-row"><span><span class="ci-sw" style="background:#1d9e75"></span>Hybrid</span><span id="info-hybrid">—</span></div>
+        <div class="city3d-info-row"><span><span class="ci-sw" style="background:#378add"></span>Electric</span><span id="info-electric">—</span></div>
       </div>
       <div class="city3d-hint" id="city3d-hint">Click a tower →</div>
     </div>
 
     <div class="legend-row city-legend">
       <div class="legend-item" style="display:flex;align-items:center;gap:6px;">↕ Height = car density (cars / 1,000 residents)</div>
-      <div class="legend-item" style="display:flex;align-items:center;gap:6px;">
-        EV share:
-        <span style="display:inline-block;width:80px;height:8px;border-radius:2px;background:linear-gradient(90deg,#888780,#378add);"></span>
-        low → high
+      <div class="city-colorscale">
+        <span class="ccs-label">Electric share</span>
+        <span class="ccs-ramp">
+          <span class="ccs-step" style="background:#d9d7cf"></span>
+          <span class="ccs-step" style="background:#9cc6c0"></span>
+          <span class="ccs-step" style="background:#4fa8b8"></span>
+          <span class="ccs-step" style="background:#2f7fc7"></span>
+          <span class="ccs-step" style="background:#1a4f9c"></span>
+        </span>
+        <span class="ccs-ends">0&nbsp;%</span>
+        <span class="ccs-ends">8&nbsp;%+</span>
       </div>
     </div>
-    <p class="chart-hint"><strong>Try it:</strong> rotate and zoom with the mouse, drag the year slider to animate tower
-      height and colour, and click a district to open its info panel.</p>
+    <p class="chart-hint"><strong>Try it:</strong> rotate and zoom with the mouse, drag the year slider to watch districts
+      shift colour class, and click a district to open its drive-mix breakdown.</p>
     <p class="fg-note">
       Note on data: the district <strong>boundaries are real</strong> — scale-accurate, from the City of Vienna's open
-      geodata (OGD, <em>Bezirksgrenzen Wien</em>). The per-district density and EV-share <strong>values are illustrative
-      placeholders</strong>, because the official MA23 tables 3.1.8–3.1.10 are city-wide aggregates with no per-district
-      breakdown of drive type. Real per-district figures would come from data.gv.at
-      ("Pkw-Bestand nach Kilowatt Leistung – Bezirke Wien").
+      geodata (OGD, <em>Bezirksgrenzen Wien</em>). The year-to-year <strong>trajectory is real too</strong> — it follows
+      Vienna's actual city-wide electric/hybrid Pkw fleet share (Tab. 3.1.8), so 2018 shows the real ~0.3 % electric /
+      ~1.3 % hybrid rather than zero. Only the <strong>spatial split across districts</strong> is an illustrative
+      placeholder, because the MA23 tables are city-wide aggregates with no per-district breakdown of drive type. Real
+      per-district figures would come from data.gv.at ("Pkw-Bestand nach Kilowatt Leistung – Bezirke Wien").
     </p>
   </section>
 
