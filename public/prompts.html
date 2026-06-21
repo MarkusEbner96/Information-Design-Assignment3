@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Prompts — Wien fährt um</title>
+<meta name="description" content="Dokumentation aller bei der Entwicklung dieses Projekts verwendeten generativen KI-Prompts, gemäß den TU Wien Richtlinien zur Offenlegung von KI-Nutzung.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .prompts-main { max-width: 760px; padding: 0 24px 80px; }
+  .prompts-header { padding: 56px 0 32px; border-bottom: 1px solid var(--border); }
+  .prompts-header h1 { font-size: 28px; font-weight: 700; margin: 0 0 12px; }
+  .prompts-header p { color: var(--text-soft); font-size: 14px; max-width: 640px; }
+  .back-link { display: inline-block; font-size: 13px; color: var(--text-soft); text-decoration: none; margin-bottom: 18px; }
+  .back-link:hover { color: var(--text); }
+  .prompt-card { padding: 28px 0; border-bottom: 1px solid var(--border); }
+  .prompt-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--bg-soft-2);
+    font-size: 12px; font-weight: 600; color: var(--text-soft); margin-bottom: 10px;
+  }
+  .prompt-body {
+    white-space: pre-wrap; font-size: 14px; line-height: 1.6; color: var(--text);
+    font-family: var(--font);
+  }
+  .prompt-body code, .prompt-body .code-block {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 12.5px; background: var(--bg-soft); border-radius: 6px;
+    padding: 12px 14px; display: block; margin: 8px 0; white-space: pre;
+    overflow-x: auto; color: var(--text-soft);
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <span class="site-title">Wien fährt um</span>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html">← Zurück zur Datenstory</a>
+  </div>
+</nav>
+
+<main class="prompts-main">
+  <div class="prompts-header">
+    <h1>AI Prompts</h1>
+    <p>
+      Dokumentation der generativen KI-Prompts, die bei der Entwicklung von "Wien fährt um"
+      verwendet wurden — von der Projektaufsetzung über das Daten-Parsing bis zu den
+      interaktiven D3.js- und Three.js-Visualisierungen. Diese Offenlegung folgt den
+      TU Wien Richtlinien zur Nutzung generativer KI-Tools für Assignment 3.
+    </p>
+  </div>
+
+  <ol style="list-style:none; padding:0; margin:0;">
+
+    <li class="prompt-card">
+      <div class="prompt-num">1</div>
+      <div class="prompt-body">Ich will diese HTML hier auf Railway deployen. Wir haben dafür folgenden Plan:
+
+Da Railway automatisch erkennt, wenn ein Node.js-Projekt vorliegt, packen wir einen winzigen Webserver (Express) dazu.
+
+1. Projektstruktur vorbereiten
+Erstelle einen neuen Ordner und lege die Dateien wie folgt ab:
+
+<span class="code-block">mein-projekt/
+├── public/
+│   ├── index.html
+│   ├── style.css (optional)
+│   └── script.js (optional)
+├── package.json
+└── server.js</span>
+
+2. Dateien befüllen
+package.json: Erstelle diese Datei und füge folgenden Inhalt ein. Sie sagt Railway, welche Abhängigkeiten gebraucht werden und wie das Projekt gestartet wird.
+
+<span class="code-block">{
+  "name": "static-html-deployment",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0"
+  }
+}</span>
+
+server.js: Das ist der Mini-Server, der einfach nur den Inhalt des public-Ordners ausliefert.
+
+<span class="code-block">const express = require('express');
+const path = require('path');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Liefert alle statischen Dateien aus dem "public"-Ordner aus
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.listen(PORT, () => {
+  console.log(`Server läuft auf Port ${PORT}`);
+});</span></div>
+    </li>
+
+    <li class="prompt-card">
+      <div class="prompt-num">2</div>
+      <div class="prompt-body">Unter /data/ haben wir Daten. Wir müssen die Daten in JSON konvertieren (z. B. mit Python/Pandas) und das JSON direkt in der App bündeln.
+
+Excel-Tabellen:
+Fahrzeugbestand (3.1.8)
+Neuzulassungen (3.1.9)
+Gebrauchtzulassungen (3.1.10)
+
+Mach jetzt einfach nur das Parsen, damit wir JSON-Datensätze haben.</div>
+    </li>
+
+    <li class="prompt-card">
+      <div class="prompt-num">3</div>
+      <div class="prompt-body">Ich habe JSON-Dateien mit Wiens Kfz-Zulassungsdaten von der MA23 (Fahrzeugbestand, Neuzulassungen, Gebrauchtwagen). Schreibe ein D3.js-Skript, das das strukturelle Grundgerüst für drei separate Diagramme erstellt: ein Stacked-Area-Chart für den Fahrzeugbestand, ein Liniendiagramm für die Neuzulassungen und ein gruppiertes Balkendiagramm für die Gebrauchtwagen. Stelle sicher, dass alle Achsen, responsiven SVG-Container und grundlegenden Farbskalen für die Antriebsarten (fossil, Hybrid, Elektro) basierend auf den JSON-Strukturen korrekt initialisiert werden.</div>
+    </li>
+
+    <li class="prompt-card">
+      <div class="prompt-num">4</div>
+      <div class="prompt-body">Ich möchte meinen bestehenden D3.js-Diagrammen fortgeschrittene Interaktionstechniken hinzufügen. Implementiere für das Stacked-Area-Chart einen „Brushing"-Zeitstrahl-Slider darunter, der die X-Achsenskala dynamisch aktualisiert. Füge für das Balkendiagramm ein Scroll-/Pinch-Zoom-Verhalten (d3.zoom()) hinzu, das auf die X-Achse beschränkt ist. Implementiere abschließend für alle Diagramme ein unsichtbares Overlay-Rechteck, das Mausbewegungen sauber erfasst, und positioniere damit einen gemeinsamen Hover-Tooltip mittels d3.pointer(event).</div>
+    </li>
+
+    <li class="prompt-card">
+      <div class="prompt-num">5</div>
+      <div class="prompt-body">Erkläre, wie der D3.js-.join()-Mechanismus die Aktualisierung des DOM handhabt, wenn ein Nutzer zwischen absoluten Fahrzeugzahlen und einer 100-%-Anteilsansicht wechselt oder Linien per Klick auf die Legende filtert. Zeig mir Schritt für Schritt, wie ich meine Render-Funktionen strukturieren muss, damit Pfade und Balken sauber zwischen diesen Zuständen transitionieren, anstatt doppelte Elemente anzuhängen.</div>
+    </li>
+
+    <li class="prompt-card">
+      <div class="prompt-num">6</div>
+      <div class="prompt-body">Das animierte Fuhrpark-Grid
+Wie es aussieht: 200 kleine Auto-Icons füllen ein Raster. Die Farbe kodiert den Antrieb: Grau für Verbrenner, Grün für Hybrid, Blau für Elektro. Oben steht die Jahreszahl groß. Darunter drei Live-Stat-Karten mit Prozentsatz und absolutem Anteil. Ein Slider und ein Play-Button erlauben das Durchscrubben von 2011 bis 2024. Wenn der Nutzer langsam zieht, „switchen" die betroffenen Autos einzeln mit einem kleinen Pop-Effekt um — als würden echte Fahrzeuge aus der Flotte ausgetauscht.
+
+Warum es Mehrwert bringt: Das ist der zentrale Trick dieses Projekts. Die Kernbotschaft heißt „Flottenträgheit" — die Flotte ändert sich langsam, weil Autos 15–20 Jahre im Betrieb bleiben. Ein Liniendiagramm zeigt das als abstrakte Kurve. Das Grid macht es körperlich erfahrbar — man zieht den Slider von 2011 bis 2024 und sieht, dass sich trotz 13 Jahren nur ein Bruchteil der Icons verfärbt. Der Unterschied zwischen dem, was man erwartet (viel mehr Blau), und dem, was passiert (kaum etwas), erzeugt genau das Aha-Erlebnis, das die Datenstory braucht.
+
+Wie die Umsetzung aussieht: Technisch sind das 200 &lt;div&gt;-Elemente mit einem kleinen Inline-SVG (Karosserie + Dach als Pfad, je zwei CSS-Klassen für die Farbe). Das Jahr mappt auf einen Datenpunkt, der sagt: X Verbrenner, Y Hybrid, Z Elektro. Eine vorberechnete, deterministisch gemischte Reihenfolge bestimmt, welche „Autos" für welchen Typ stehen — so wirkt die Verteilung organisch über das Grid statt wie ein einfacher Zähler in der Ecke. Bei kleinen Jahressprüngen animiert jedes wechselnde Auto mit einem kurzen Stagger-Delay. Echte Daten aus dem MA23-Datensatz (3.1.8) ersetzen vor dem Launch die Platzhalterwerte. Gesamtaufwand realistisch: 3–5 Stunden inklusive echter Daten.</div>
+    </li>
+
+    <li class="prompt-card">
+      <div class="prompt-num">7</div>
+      <div class="prompt-body">Ok, folgendes Problem: Wenn man die Seite neu lädt, funktioniert das Ganze einwandfrei. Man startet bei null grünen Autos, und wenn man den Regler verschiebt, werden es immer mehr grüne bzw. blaue. Wenn man den Regler jedoch wieder ganz nach links schiebt, bleiben mehr Autos farbig, als es am Anfang waren. D. h., das Ganze funktioniert beim Rückwärtsbewegen nicht korrekt.</div>
+    </li>
+
+    <li class="prompt-card">
+      <div class="prompt-num">8</div>
+      <div class="prompt-body">Ich baue eine interaktive Daten-Story über Elektromobilität in Wien und will eine 3D-Visualisierung mit Three.js umsetzen. Bitte baue mir einen lauffähigen Prototyp.
+
+Was es können soll:
+Eine stilisierte 3D-Karte von Wien, unterteilt in die 23 Bezirke. Jeder Bezirk ist ein einfacher Quader (BoxGeometry), grob nach seiner realen geografischen Position angeordnet. Die Quader sollen zwei Dinge kodieren:
+
+Höhe = Pkw-Dichte des Bezirks
+Farbe = Elektro-Anteil, interpoliert per Lerp von Grau (wenig E-Autos) zu Blau (viel E-Autos)
+
+Interaktion:
+
+Kamera mit der Maus drehen und zoomen (OrbitControls)
+Ein Jahr-Slider (2011–2024): Beim Ziehen wachsen/schrumpfen die Quader (scale.y) und ändern ihre Farbe (material.color) live entsprechend der Daten des gewählten Jahres
+Klick auf einen Bezirk (Raycasting) → ein kleines Info-Panel mit den genauen Zahlen des Bezirks
+
+Wichtig zur Umsetzung:
+
+Bitte keine echte Geo-Mesh-Karte — die 23 Bezirke als simple Quader reichen. Lege die Positionen als einmaliges, handgepflegtes 2D-Layout an, das ich später anpassen kann.
+Erstelle die 23 Quader einmal und ändere beim Slider nur scale.y und material.color, statt Geometrien neu zu bauen (Performance).
+Render nur on-demand, wenn sich etwas ändert, nicht in einer Endlosschleife (Akku/Mobile).
+Three.js modular importieren, nicht die ganze Library.
+Verwende zunächst Platzhalterdaten in einer sauber getrennten JSON-Struktur (Bezirk → Jahr → {pkwDichte, eAnteil}), damit ich die echten Werte später leicht ersetzen kann.
+Kommentiere die Stellen, an denen ich (a) die Bezirkspositionen und (b) die echten Daten einsetzen muss.
+
+Kontext zu den Daten: Die echten Daten kommen von MA23 / data.gv.at. Ich muss noch prüfen, ob es einen Bezirks-Datensatz mit Antriebsart gibt — daher zunächst Platzhalter.
+
+Baue das als saubere, kommentierte HTML/JS-Datei, die ich lokal öffnen und auf Railway deployen kann.</div>
+    </li>
+
+    <li class="prompt-card">
+      <div class="prompt-num">9</div>
+      <div class="prompt-body">Wir brauchen jetzt noch eine maßstabsgetreue 2D-Karte der Wiener Bezirke, die unter den 3D-Türmen liegt, damit man die Bezirke leicht zuordnen kann. Eine flache „Grundplatte" mit den echten Bezirksgrenzen, auf der die Quader stehen.
+Bevor du loslegst: Brauchst du dafür von mir eine Vektorgrafik der Wiener Bezirksgrenzen (z. B. SVG oder GeoJSON), oder kannst du die Umrisse selbst erzeugen bzw. aus einer freien Quelle beziehen? Falls du eine Vorlage brauchst, sag mir welches Format am besten passt, dann besorge ich sie.</div>
+    </li>
+
+    <li class="prompt-card">
+      <div class="prompt-num">10</div>
+      <div class="prompt-body">Die aktuelle Färbung (grau → blau) finde ich in der Abstufung noch zu undeutlich — die Zwischenwerte sind schwer auseinanderzuhalten. Ich hätte gerne eine deutlichere visuelle Unterscheidung zwischen niedrigem und hohem E-Anteil. Fällt dir eine bessere Farbskala oder ein Zwischenweg ein, der die Abstufungen klarer macht? Zeig mir gern ein paar Optionen.</div>
+    </li>
+
+    <li class="prompt-card">
+      <div class="prompt-num">11</div>
+      <div class="prompt-body">Mir ist gerade etwas aufgefallen: Wenn ich auf das Jahr 2018 slide, zeigt die Grafik an, dass kein einziges Elektro- oder Hybrid-Auto in Wien angemeldet war — alle Bezirke sind komplett grau. Das kommt mir falsch vor, aber ich kenne die genauen Daten nicht.
+Kannst du prüfen, ob das stimmen kann, oder ob hier ein Fehler in den (Platzhalter-)Daten oder in der Logik steckt? Falls es Platzhalterwerte sind, lass uns sicherstellen, dass die Verteilung realistisch ist.</div>
+    </li>
+
+  </ol>
+</main>
+
+<footer>
+  <a href="index.html">← Zurück zur Datenstory</a>
+</footer>
+
+</body>
+</html>

@@ -233,6 +233,8 @@ section:last-of-type { border-bottom: none; }
 footer {
   padding: 28px 0 50px; text-align: center; font-size: 12px; color: var(--text-faint);
 }
+footer a { color: var(--text-faint); text-decoration: underline; }
+footer a:hover { color: var(--text-soft); }
 
 @media (max-width: 720px) {
   .stat-cards, .takeaways { grid-template-columns: 1fr; }
