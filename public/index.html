@@ -3,641 +3,228 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vienna E-Mobility — Wireframe Storyboard</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
-<style>
-  :root {
-    --color-background-primary: #ffffff;
-    --color-background-secondary: #f5f4f0;
-    --color-background-tertiary: #eeede9;
-    --color-text-primary: #1a1a18;
-    --color-text-secondary: #5a5a56;
-    --color-text-tertiary: #9a9993;
-    --color-border-tertiary: rgba(30,30,26,0.12);
-    --color-border-secondary: rgba(30,30,26,0.22);
-    --color-border-primary: rgba(30,30,26,0.35);
-    --border-radius-md: 8px;
-    --border-radius-lg: 12px;
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-serif: Georgia, serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-background-primary: #1c1c1a;
-      --color-background-secondary: #252522;
-      --color-background-tertiary: #2e2e2a;
-      --color-text-primary: #e8e6df;
-      --color-text-secondary: #a8a69f;
-      --color-text-tertiary: #6a6862;
-      --color-border-tertiary: rgba(240,238,230,0.1);
-      --color-border-secondary: rgba(240,238,230,0.18);
-      --color-border-primary: rgba(240,238,230,0.28);
-    }
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: var(--font-sans);
-    background: var(--color-background-tertiary);
-    color: var(--color-text-primary);
-    padding: 24px 16px 48px;
-    min-height: 100vh;
-  }
-  .page-header {
-    max-width: 820px;
-    margin: 0 auto 20px;
-    padding-bottom: 16px;
-    border-bottom: 0.5px solid var(--color-border-secondary);
-  }
-  .page-header h1 { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
-  .page-header p { font-size: 12px; color: var(--color-text-secondary); }
-  .wb { width: 100%; max-width: 820px; margin: 0 auto; }
-  .nav-pills { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
-  .pill {
-    padding: 6px 14px; border-radius: 20px;
-    border: 0.5px solid var(--color-border-secondary);
-    background: transparent; font-size: 12px; cursor: pointer;
-    color: var(--color-text-secondary); transition: all 0.2s;
-    font-family: var(--font-sans); white-space: nowrap;
-  }
-  .pill.active { background: var(--color-text-primary); color: var(--color-background-primary); border-color: var(--color-text-primary); }
-  .pill:hover:not(.active) { background: var(--color-background-secondary); }
-  .view { display: none; }
-  .view.active { display: block; }
-  .frame { border: 1.5px dashed var(--color-border-secondary); border-radius: var(--border-radius-lg); overflow: hidden; background: var(--color-background-primary); }
-  .frame-header {
-    background: var(--color-background-secondary); padding: 10px 16px;
-    display: flex; align-items: center; gap: 10px;
-    border-bottom: 0.5px solid var(--color-border-tertiary);
-  }
-  .frame-dots { display: flex; gap: 5px; }
-  .dot { width: 8px; height: 8px; border-radius: 50%; }
-  .dot.r { background: #E24B4A; } .dot.y { background: #EF9F27; } .dot.g { background: #639922; }
-  .url-bar {
-    flex: 1; background: var(--color-background-primary);
-    border: 0.5px solid var(--color-border-tertiary);
-    border-radius: 6px; padding: 4px 10px;
-    font-size: 11px; color: var(--color-text-tertiary);
-  }
-  .int-badge {
-    display: inline-flex; align-items: center; gap: 4px;
-    font-size: 9px; border-radius: 3px; padding: 2px 6px;
-  }
-  .badge-interactive { background: #EAF3DE; color: #27500A; }
-  .badge-static { background: #F1EFE8; color: #5F5E5A; }
-  .page { background: var(--color-background-primary); }
-  .top-nav {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 10px 20px; border-bottom: 0.5px solid var(--color-border-tertiary);
-  }
-  .site-title { font-size: 12px; font-weight: 500; }
-  .nav-links { display: flex; gap: 14px; }
-  .nav-link { font-size: 10px; color: var(--color-text-secondary); padding: 3px 0; }
-  .nav-link.active-link { color: var(--color-text-primary); border-bottom: 1.5px solid var(--color-text-primary); }
-  .progress-bar { height: 2px; background: var(--color-border-tertiary); }
-  .progress-fill { height: 100%; background: var(--color-text-primary); }
-  .section-body { padding: 20px; }
-  .section-label {
-    display: inline-block; font-size: 10px; font-weight: 500;
-    padding: 3px 8px; border-radius: 4px; margin-bottom: 8px;
-  }
-  .label-slow { background: #E6F1FB; color: #0C447C; }
-  .label-fast { background: #EAF3DE; color: #27500A; }
-  .label-social { background: #FAEEDA; color: #633806; }
-  .section-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
-  .section-sub { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; margin-bottom: 14px; }
-  .chart-area {
-    border: 0.5px solid var(--color-border-tertiary);
-    border-radius: var(--border-radius-md);
-    background: var(--color-background-secondary);
-    position: relative; overflow: hidden;
-  }
-  .callout-strip { border-left: 2px solid; padding: 8px 12px; margin-bottom: 10px; }
-  .callout-headline { font-size: 11px; font-weight: 500; margin-bottom: 2px; }
-  .callout-text { font-size: 10px; color: var(--color-text-secondary); line-height: 1.5; }
-  .controls-row {
-    display: flex; gap: 8px; margin-bottom: 10px;
-    flex-wrap: wrap; align-items: center;
-  }
-  .ctrl-btn {
-    font-size: 10px; padding: 4px 10px;
-    border: 0.5px solid var(--color-border-secondary);
-    border-radius: 4px; background: var(--color-background-secondary);
-    color: var(--color-text-secondary); font-family: var(--font-sans); cursor: default;
-  }
-  .ctrl-btn.sel {
-    background: var(--color-background-primary);
-    border-color: var(--color-border-primary);
-    color: var(--color-text-primary);
-  }
-  .ctrl-range { display: flex; align-items: center; gap: 6px; font-size: 10px; color: var(--color-text-secondary); margin-left: auto; }
-  .ctrl-range input { width: 80px; }
-  .legend-row { display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
-  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--color-text-secondary); }
-  .legend-swatch { width: 12px; height: 8px; border-radius: 2px; flex-shrink: 0; }
-  .stat-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 12px; }
-  .stat-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 12px; }
-  .stat-val { font-size: 18px; font-weight: 500; }
-  .stat-lbl { font-size: 10px; color: var(--color-text-secondary); margin-top: 2px; }
-  .scroll-hint { display: flex; align-items: center; gap: 6px; font-size: 10px; color: var(--color-text-tertiary); margin-top: 10px; }
-  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 14px 0; }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .footer-strip {
-    background: var(--color-background-secondary);
-    border-top: 0.5px solid var(--color-border-tertiary);
-    padding: 10px 20px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .footer-text { font-size: 10px; color: var(--color-text-tertiary); }
-  .next-btn {
-    font-size: 10px; padding: 5px 12px;
-    border: 0.5px solid var(--color-border-secondary);
-    border-radius: 4px; background: var(--color-text-primary);
-    color: var(--color-background-primary); cursor: pointer;
-    font-family: var(--font-sans);
-  }
-  .next-btn.ghost {
-    background: transparent;
-    color: var(--color-text-secondary);
-  }
-  .hero-section {
-    padding: 28px 20px 20px; text-align: center;
-    border-bottom: 0.5px solid var(--color-border-tertiary);
-  }
-  .hero-tag { font-size: 10px; color: var(--color-text-tertiary); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
-  .hero-title { font-size: 20px; font-weight: 500; line-height: 1.3; margin-bottom: 8px; }
-  .hero-sub { font-size: 11px; color: var(--color-text-secondary); max-width: 400px; margin: 0 auto 16px; line-height: 1.6; }
-  .speed-cards { display: flex; gap: 8px; justify-content: center; }
-  .speed-card {
-    border: 0.5px solid var(--color-border-tertiary);
-    border-radius: var(--border-radius-md);
-    padding: 10px 14px; text-align: center;
-    flex: 1; max-width: 140px; cursor: pointer;
-    transition: background 0.15s;
-  }
-  .speed-card:hover { background: var(--color-background-secondary); }
-  .speed-icon { font-size: 18px; margin-bottom: 4px; }
-  .speed-name { font-size: 10px; font-weight: 500; }
-  .speed-desc { font-size: 9px; color: var(--color-text-tertiary); margin-top: 2px; }
-  .flow-title {
-    font-size: 11px; font-weight: 500; color: var(--color-text-secondary);
-    margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em;
-  }
-  .flow-steps { display: flex; gap: 0; align-items: center; }
-  .flow-step { flex: 1; text-align: center; }
-  .flow-node {
-    border: 0.5px solid var(--color-border-secondary);
-    border-radius: var(--border-radius-md);
-    padding: 8px 6px; background: var(--color-background-secondary);
-  }
-  .flow-node-title { font-size: 10px; font-weight: 500; }
-  .flow-node-sub { font-size: 9px; color: var(--color-text-tertiary); margin-top: 2px; }
-  .flow-arrow { font-size: 14px; color: var(--color-text-tertiary); padding: 0 4px; }
-  .int-row {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 8px 0; border-top: 0.5px solid var(--color-border-tertiary);
-  }
-  .int-icon { font-size: 16px; width: 24px; flex-shrink: 0; color: var(--color-text-secondary); }
-  .int-text { font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; }
-  .int-text strong { color: var(--color-text-primary); font-weight: 500; }
-  .view-note {
-    font-size: 11px; color: var(--color-text-tertiary);
-    margin-top: 8px; padding: 0 4px;
-    border-left: 2px solid var(--color-border-tertiary);
-    padding-left: 10px;
-  }
-  svg text { font-family: var(--font-sans); }
-</style>
+<title>Wien fährt um — Vienna's Electric Mobility Transition</title>
+<meta name="description" content="An interactive data story about the slow, fast, and social speeds of Vienna's transition to electric vehicles, based on official MA23 / Statistik Austria registration data.">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="wb">
-  <div class="page-header">
-    <h1>Vienna E-Mobility — Wireframe Storyboard</h1>
-    <p>Part 2 design sketch · 5 views · Interactive navigation flow</p>
-  </div>
+<div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
 
-  <div style="margin-bottom: 1rem;">
-    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 8px;">Navigate the wireframe — 5 views in total:</p>
-    <div class="nav-pills">
-      <button class="pill active" onclick="show('landing')">① Landing</button>
-      <button class="pill" onclick="show('slow')">② Slow fleet</button>
-      <button class="pill" onclick="show('fast')">③ Fast registrations</button>
-      <button class="pill" onclick="show('social')">④ Used-car market</button>
-      <button class="pill" onclick="show('flow')">⑤ Navigation flow</button>
-    </div>
+<nav class="top-nav">
+  <span class="site-title">Wien fährt um</span>
+  <div class="nav-links">
+    <a class="nav-link active-link" href="#bestand">Fleet Stock</a>
+    <a class="nav-link" href="#neuzulassungen">New Registrations</a>
+    <a class="nav-link" href="#gebraucht">Used Market</a>
+    <a class="nav-link" href="#comparison">Comparison</a>
+    <a class="nav-link" href="#conclusion">Methodology</a>
   </div>
+</nav>
 
-  <!-- VIEW 1: LANDING -->
-  <div id="v-landing" class="view active">
-    <div class="frame">
-      <div class="frame-header">
-        <div class="frame-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
-        <div class="url-bar">wien-emobility.at</div>
-        <span class="int-badge badge-static">Static hero</span>
+<main>
+
+  <!-- View 1: Landing / Hero -->
+  <section id="hero">
+    <p class="hero-tag">Vienna · Mobility · 2007–2024</p>
+    <h1 class="hero-title">Three speeds of the electric turn</h1>
+    <p class="hero-sub">
+      Vienna's car fleet is going electric — but not everywhere at the same pace.
+      This story follows three channels of change: the cars already on the road,
+      the cars being bought new, and the cars changing hands second-hand.
+    </p>
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-val" style="color:#0c447c;" id="stat-bestand">—</div>
+        <div class="stat-lbl">Electric share of the total fleet (<span id="stat-year"></span>)</div>
       </div>
-      <div class="page">
-        <div class="top-nav">
-          <span class="site-title">Wien fährt um — das E-Auto in der Stadt</span>
-          <div class="nav-links">
-            <span class="nav-link active-link">Bestand</span>
-            <span class="nav-link">Neuzulassungen</span>
-            <span class="nav-link">Gebrauchtmarkt</span>
-            <span class="nav-link">Methodik</span>
-          </div>
-        </div>
-        <div class="hero-section">
-          <p class="hero-tag">Vienna · Mobility · 2011–2024</p>
-          <h1 class="hero-title">Three speeds of the electric turn</h1>
-          <p class="hero-sub">Vienna's car fleet is changing — but not at the same pace everywhere. This story unfolds across three markets, three time horizons, and three very different speeds.</p>
-          <div class="speed-cards">
-            <div class="speed-card" onclick="show('slow')">
-              <div class="speed-icon">🐢</div>
-              <div class="speed-name">The fleet</div>
-              <div class="speed-desc">Stock since 2011</div>
-            </div>
-            <div class="speed-card" onclick="show('fast')">
-              <div class="speed-icon">⚡</div>
-              <div class="speed-name">New registrations</div>
-              <div class="speed-desc">The fast channel</div>
-            </div>
-            <div class="speed-card" onclick="show('social')">
-              <div class="speed-icon">👥</div>
-              <div class="speed-name">Used cars</div>
-              <div class="speed-desc">The social channel</div>
-            </div>
-          </div>
-        </div>
-        <div style="padding: 12px 20px;">
-          <div class="stat-cards">
-            <div class="stat-card">
-              <div class="stat-val" style="color:#0C447C;">~5%</div>
-              <div class="stat-lbl">Electric share of total fleet (2024)</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-val" style="color:#27500A;">21.3%</div>
-              <div class="stat-lbl">Electric share of new registrations (2025)</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-val" style="color:#633806;">2035</div>
-              <div class="stat-lbl">EU combustion engine ban deadline</div>
-            </div>
-          </div>
-          <div class="scroll-hint">
-            <i class="ti ti-arrow-down"></i>
-            Scroll or click a section above to explore the data
-          </div>
-        </div>
-        <div class="footer-strip">
-          <span class="footer-text">Data: MA23 Open Data, Wien · Datasets 3.1.8 / 3.1.9 / 3.1.10</span>
-          <button class="next-btn" onclick="show('slow')">Start →</button>
-        </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color:#27500a;" id="stat-neu">—</div>
+        <div class="stat-lbl">Electric share of new registrations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color:#633806;" id="stat-gebraucht">—</div>
+        <div class="stat-lbl">Electric share of used registrations</div>
       </div>
     </div>
-    <p class="view-note">Click the speed cards or "Start →" to enter the first story section. The three key statistics anchor the reader immediately.</p>
-  </div>
+    <div class="scroll-cta" data-scroll-to="bestand">↓ Scroll to explore the data</div>
+  </section>
 
-  <!-- VIEW 2: SLOW FLEET -->
-  <div id="v-slow" class="view">
-    <div class="frame">
-      <div class="frame-header">
-        <div class="frame-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
-        <div class="url-bar">wien-emobility.at/#bestand</div>
-        <span class="int-badge badge-interactive"><i class="ti ti-hand-click" style="font-size:11px"></i> Interactive</span>
+  <!-- View 2: Fleet stock (Bestand) -->
+  <section id="bestand">
+    <span class="section-label label-slow">Section 1 of 3 · The slow speed</span>
+    <h2 class="section-title">Vienna's car fleet: still mostly fossil</h2>
+    <p class="section-sub">
+      Since 2011, the overall composition of registered vehicles has shifted —
+      but slowly. Petrol and diesel still dominate the streets. Electric vehicles
+      are growing, but from a tiny base.
+    </p>
+    <div class="callout">
+      <div class="callout-title">Why so slow?</div>
+      <div class="callout-text">Cars stay on the road for 15–20 years. Even fast growth in new registrations takes
+        decades to fully replace the existing stock — this is the "fleet inertia" problem.</div>
+    </div>
+
+    <div class="controls-row" id="bestand-category-filter">
+      <span class="ctrl-label">Vehicle category:</span>
+      <button class="filter-btn active" data-category="Insgesamt">All vehicles</button>
+      <button class="filter-btn" data-category="Pkw">Cars (Pkw)</button>
+      <button class="filter-btn" data-category="Krafträder">Motorcycles</button>
+      <button class="filter-btn" data-category="Lkw">Trucks (Lkw)</button>
+      <button class="filter-btn" data-category="Sonstige">Other</button>
+      <label class="toggle-switch" style="margin-left:auto;">
+        <input type="checkbox" id="bestand-percent-toggle">
+        Show as 100% share
+      </label>
+    </div>
+
+    <div class="chart-panel">
+      <div id="chart-bestand"></div>
+    </div>
+    <div class="legend-row">
+      <div class="legend-item" style="display:flex;align-items:center;gap:5px;"><span class="legend-swatch" style="background:#9a9993"></span>Fossil</div>
+      <div class="legend-item" style="display:flex;align-items:center;gap:5px;"><span class="legend-swatch" style="background:#1d9e75"></span>Hybrid</div>
+      <div class="legend-item" style="display:flex;align-items:center;gap:5px;"><span class="legend-swatch" style="background:#378add"></span>Electric</div>
+    </div>
+    <p class="chart-hint"><strong>Try it:</strong> drag the handles in the small strip below the chart to brush a custom
+      time window. Switch vehicle category, or toggle the 100% share view. Hover the chart for exact yearly counts.</p>
+  </section>
+
+  <!-- View 3: New registrations (Neuzulassungen) -->
+  <section id="neuzulassungen" style="background:var(--bg-soft);">
+    <span class="section-label label-fast">Section 2 of 3 · The fast speed</span>
+    <h2 class="section-title">New registrations: a dramatic shift since 2020</h2>
+    <p class="section-sub">
+      Factory-new vehicles entering the fleet tell a very different story. The
+      share of electric and hybrid drives among new registrations has surged —
+      this is where policy incentives and manufacturer supply are most visible.
+    </p>
+    <div class="callout green">
+      <div class="callout-title">2020 turning point</div>
+      <div class="callout-text">Federal purchase subsidies and COVID recovery packages coincided with a sharp jump
+        in the electric share of new registrations.</div>
+    </div>
+
+    <div class="controls-row" id="neu-category-filter">
+      <span class="ctrl-label">Vehicle category:</span>
+      <button class="filter-btn active" data-category="Insgesamt">All vehicles</button>
+      <button class="filter-btn" data-category="Pkw">Cars (Pkw)</button>
+      <button class="filter-btn" data-category="Krafträder">Motorcycles</button>
+      <button class="filter-btn" data-category="Lkw">Trucks (Lkw)</button>
+      <button class="filter-btn" data-category="Sonstige">Other</button>
+    </div>
+
+    <div class="chart-panel">
+      <div id="chart-neuzulassungen"></div>
+    </div>
+    <div class="legend-row" id="neu-legend">
+      <div class="legend-toggle" data-fuel="Fossil"><span class="legend-swatch" style="background:#9a9993"></span>Fossil</div>
+      <div class="legend-toggle" data-fuel="Hybrid"><span class="legend-swatch" style="background:#1d9e75"></span>Hybrid</div>
+      <div class="legend-toggle" data-fuel="Elektro"><span class="legend-swatch" style="background:#378add"></span>Electric</div>
+    </div>
+    <p class="chart-hint"><strong>Try it:</strong> click a legend entry to isolate or hide that drive type. Hover the
+      chart to compare exact year-by-year shares.</p>
+  </section>
+
+  <!-- View 4: Used-car market (Gebrauchtzulassungen) -->
+  <section id="gebraucht">
+    <span class="section-label label-social">Section 3 of 3 · The social speed</span>
+    <h2 class="section-title">Used cars: when does the transition reach everyone?</h2>
+    <p class="section-sub">
+      Most private households buy used cars, not new ones. The used-car market is
+      therefore the clearest indicator of when the e-mobility transition becomes
+      truly accessible — beyond companies and high-income early adopters.
+    </p>
+    <div class="callout amber">
+      <div class="callout-title">The lag effect</div>
+      <div class="callout-text">A car registered new in 2021 typically enters the used market years later. The
+        used-EV boom is still arriving — this chart shows its early, still-modest signals.</div>
+    </div>
+
+    <div class="chart-panel">
+      <div id="chart-gebraucht"></div>
+    </div>
+    <div class="legend-row">
+      <div class="legend-item" style="display:flex;align-items:center;gap:5px;"><span class="legend-swatch" style="background:#9a9993"></span>Fossil</div>
+      <div class="legend-item" style="display:flex;align-items:center;gap:5px;"><span class="legend-swatch" style="background:#1d9e75"></span>Hybrid</div>
+      <div class="legend-item" style="display:flex;align-items:center;gap:5px;"><span class="legend-swatch" style="background:#378add"></span>Electric</div>
+    </div>
+    <p class="chart-hint"><strong>Try it:</strong> scroll/pinch to zoom into a specific stretch of years, hover any bar
+      for the exact registration count.</p>
+  </section>
+
+  <!-- View 5: Comparison / synthesis -->
+  <section id="comparison">
+    <span class="section-label label-compare">Putting it together</span>
+    <h2 class="section-title">The gap between buying new and driving electric</h2>
+    <p class="section-sub">
+      Overlaying the electric share of all three channels reveals the real story:
+      new registrations are racing ahead, the total fleet is following at a
+      distance, and the used-car market — where most Viennese actually buy their
+      next car — is barely moving yet.
+    </p>
+    <div class="chart-panel">
+      <div id="chart-comparison"></div>
+    </div>
+    <div class="legend-row" id="comparison-legend">
+      <div class="legend-toggle" data-key="bestand"><span class="legend-swatch" style="background:#378add"></span>Fleet stock</div>
+      <div class="legend-toggle" data-key="neu"><span class="legend-swatch" style="background:#639922"></span>New registrations</div>
+      <div class="legend-toggle" data-key="gebraucht"><span class="legend-swatch" style="background:#ba7517"></span>Used registrations</div>
+    </div>
+    <p class="chart-hint"><strong>Try it:</strong> click a legend entry to isolate one channel and see its trajectory
+      on its own.</p>
+  </section>
+
+  <!-- View 6: Conclusion & Methodology -->
+  <section id="conclusion">
+    <span class="section-label label-compare">Takeaways</span>
+    <h2 class="section-title">What this means for Vienna's transition</h2>
+    <div class="takeaways">
+      <div class="takeaway-card">
+        <h3>🐢 The fleet moves slowly</h3>
+        <p>Long vehicle lifespans mean the total stock changes gradually, even when new-car buying habits shift fast.</p>
       </div>
-      <div class="page">
-        <div class="top-nav">
-          <span class="site-title">Wien fährt um</span>
-          <div class="nav-links">
-            <span class="nav-link active-link">Bestand</span>
-            <span class="nav-link">Neuzulassungen</span>
-            <span class="nav-link">Gebrauchtmarkt</span>
-            <span class="nav-link">Methodik</span>
-          </div>
-        </div>
-        <div class="progress-bar"><div class="progress-fill" style="width:33%"></div></div>
-        <div class="section-body">
-          <span class="section-label label-slow">Section 1 of 3 · The slow speed</span>
-          <div class="section-title">Vienna's car fleet: still mostly fossil</div>
-          <p class="section-sub">Since 2011, the total fleet composition has changed — but slowly. Petrol and diesel still dominate. Electric vehicles are growing, but from a tiny base.</p>
-          <div class="callout-strip" style="border-left-color:#378ADD; background:#E6F1FB;">
-            <div class="callout-headline" style="color:#0C447C;">Why so slow?</div>
-            <div class="callout-text">Cars have long lifespans (15–20 yrs). Even rapid new-registration growth takes decades to replace the existing stock. This is the "fleet inertia" problem.</div>
-          </div>
-          <div class="controls-row">
-            <div style="font-size:10px;color:var(--color-text-secondary);">View:</div>
-            <button class="ctrl-btn sel">Absolute numbers</button>
-            <button class="ctrl-btn">Share (%)</button>
-            <div class="ctrl-range">
-              <span>Year range:</span>
-              <input type="range" min="2011" max="2024" value="2024">
-              <span>2011–2024</span>
-            </div>
-          </div>
-          <div class="chart-area" style="height:200px;margin-bottom:10px;">
-            <svg width="100%" height="100%" viewBox="0 0 580 200">
-              <line x1="50" y1="10" x2="50" y2="170" stroke="rgba(30,30,26,0.12)" stroke-width="0.5"/>
-              <line x1="50" y1="170" x2="570" y2="170" stroke="rgba(30,30,26,0.12)" stroke-width="0.5"/>
-              <path d="M50,40 C150,38 250,35 350,32 C420,30 500,28 570,26 L570,170 L50,170 Z" fill="#B4B2A9" opacity="0.5"/>
-              <path d="M50,80 C150,78 250,76 350,74 C420,72 500,70 570,68 L570,170 L50,170 Z" fill="#D3D1C7" opacity="0.7"/>
-              <path d="M50,155 C150,150 250,145 350,138 C420,132 500,125 570,118 L570,170 L50,170 Z" fill="#9FE1CB" opacity="0.7"/>
-              <path d="M50,169 C150,168 250,167 350,164 C420,162 500,158 570,150 L570,170 L50,170 Z" fill="#378ADD" opacity="0.9"/>
-              <text x="50" y="184" font-size="9" fill="#9a9993" text-anchor="middle">2011</text>
-              <text x="195" y="184" font-size="9" fill="#9a9993" text-anchor="middle">2015</text>
-              <text x="340" y="184" font-size="9" fill="#9a9993" text-anchor="middle">2019</text>
-              <text x="485" y="184" font-size="9" fill="#9a9993" text-anchor="middle">2023</text>
-              <text x="18" y="40" font-size="9" fill="#9a9993">700k</text>
-              <text x="18" y="90" font-size="9" fill="#9a9993">500k</text>
-              <text x="18" y="140" font-size="9" fill="#9a9993">100k</text>
-              <text x="310" y="24" font-size="9" fill="#9a9993" text-anchor="middle">Stacked area chart (toggle: % share view)</text>
-              <rect x="390" y="105" width="130" height="36" rx="3" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.5"/>
-              <text x="396" y="119" font-size="9" fill="#0C447C" font-weight="500">⬆ Electric still &lt;5%</text>
-              <text x="396" y="133" font-size="9" fill="#0C447C">of total fleet in 2024</text>
-              <line x1="390" y1="125" x2="570" y2="152" stroke="#378ADD" stroke-width="0.5" stroke-dasharray="3 2"/>
-            </svg>
-          </div>
-          <div class="legend-row">
-            <div class="legend-item"><div class="legend-swatch" style="background:#888780"></div>Diesel</div>
-            <div class="legend-item"><div class="legend-swatch" style="background:#B4B2A9"></div>Petrol</div>
-            <div class="legend-item"><div class="legend-swatch" style="background:#1D9E75"></div>Hybrid</div>
-            <div class="legend-item"><div class="legend-swatch" style="background:#378ADD"></div>Electric (BEV)</div>
-            <div class="legend-item"><div class="legend-swatch" style="background:#D3D1C7"></div>Other</div>
-          </div>
-          <hr class="divider">
-          <div style="font-size:10px;color:var(--color-text-tertiary);">
-            <span class="int-badge badge-interactive"><i class="ti ti-hand-click" style="font-size:10px"></i> Interactive</span>
-            Hover chart → tooltip with exact counts · Toggle absolute / share view · Drag year range slider
-          </div>
-        </div>
-        <div class="footer-strip">
-          <button class="next-btn ghost" onclick="show('landing')">← Back</button>
-          <button class="next-btn" onclick="show('fast')">Next: New registrations →</button>
-        </div>
+      <div class="takeaway-card">
+        <h3>⚡ New registrations move fast</h3>
+        <p>Subsidies and supply growth have pushed electric vehicles to a meaningful share of new registrations since 2020.</p>
+      </div>
+      <div class="takeaway-card">
+        <h3>👥 Access still lags</h3>
+        <p>The used-car market — the entry point for most households — shows the transition has not yet reached everyone.</p>
       </div>
     </div>
-    <p class="view-note">Stacked area chart from MA23 Dataset A (3.1.8). The annotation pin highlights the key insight. Toggle controls let readers switch between absolute and percentage views.</p>
-  </div>
 
-  <!-- VIEW 3: FAST REGISTRATIONS -->
-  <div id="v-fast" class="view">
-    <div class="frame">
-      <div class="frame-header">
-        <div class="frame-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
-        <div class="url-bar">wien-emobility.at/#neuzulassungen</div>
-        <span class="int-badge badge-interactive"><i class="ti ti-hand-click" style="font-size:11px"></i> Interactive</span>
-      </div>
-      <div class="page">
-        <div class="top-nav">
-          <span class="site-title">Wien fährt um</span>
-          <div class="nav-links">
-            <span class="nav-link">Bestand</span>
-            <span class="nav-link active-link">Neuzulassungen</span>
-            <span class="nav-link">Gebrauchtmarkt</span>
-            <span class="nav-link">Methodik</span>
-          </div>
-        </div>
-        <div class="progress-bar"><div class="progress-fill" style="width:66%"></div></div>
-        <div class="section-body">
-          <span class="section-label label-fast">Section 2 of 3 · The fast speed</span>
-          <div class="section-title">New registrations: a dramatic shift since 2020</div>
-          <p class="section-sub">Factory-new vehicles entering the fleet tell a very different story. The share of electric and hybrid among new registrations has surged — this is where policy incentives are most visible.</p>
-          <div class="two-col" style="margin-bottom:12px;">
-            <div class="callout-strip" style="border-left-color:#639922;background:#EAF3DE;">
-              <div class="callout-headline" style="color:#27500A;">2020 turning point</div>
-              <div class="callout-text">Federal subsidies + COVID recovery packages triggered a sharp jump in EV new registrations.</div>
-            </div>
-            <div class="callout-strip" style="border-left-color:#E24B4A;background:#FCEBEB;">
-              <div class="callout-headline" style="color:#791F1F;">Company cars dominate</div>
-              <div class="callout-text">Most new EVs are registered by companies, not private households — skewing the headline figures.</div>
-            </div>
-          </div>
-          <div class="controls-row">
-            <div style="font-size:10px;color:var(--color-text-secondary);">Drive type:</div>
-            <button class="ctrl-btn sel">All</button>
-            <button class="ctrl-btn">BEV only</button>
-            <button class="ctrl-btn">Hybrid only</button>
-            <button class="ctrl-btn">Fossil only</button>
-          </div>
-          <div class="chart-area" style="height:190px;margin-bottom:10px;">
-            <svg width="100%" height="100%" viewBox="0 0 580 190">
-              <line x1="50" y1="10" x2="50" y2="160" stroke="rgba(30,30,26,0.12)" stroke-width="0.5"/>
-              <line x1="50" y1="160" x2="570" y2="160" stroke="rgba(30,30,26,0.12)" stroke-width="0.5"/>
-              <path d="M50,30 C100,31 150,33 220,38 C280,43 320,50 380,75 C440,100 500,110 570,115" fill="none" stroke="#888780" stroke-width="1.5"/>
-              <path d="M50,140 C100,138 150,135 220,128 C280,120 320,110 380,90 C440,70 500,60 570,52" fill="none" stroke="#1D9E75" stroke-width="1.5"/>
-              <path d="M50,158 C100,157 150,156 220,155 C265,154 290,152 325,145 C360,135 420,110 490,70 C520,55 550,40 570,30" fill="none" stroke="#378ADD" stroke-width="2"/>
-              <line x1="310" y1="15" x2="310" y2="155" stroke="rgba(30,30,26,0.22)" stroke-width="0.5" stroke-dasharray="4 3"/>
-              <rect x="244" y="14" width="135" height="28" rx="3" fill="#EAF3DE" stroke="#639922" stroke-width="0.5"/>
-              <text x="311" y="25" font-size="9" fill="#27500A" font-weight="500" text-anchor="middle">2020: subsidy boost</text>
-              <text x="311" y="36" font-size="9" fill="#27500A" text-anchor="middle">BEV share jumps sharply</text>
-              <rect x="440" y="95" width="120" height="24" rx="3" fill="#FCEBEB" stroke="#E24B4A" stroke-width="0.5"/>
-              <text x="500" y="108" font-size="9" fill="#791F1F" font-weight="500" text-anchor="middle">↗ EU 2035 target</text>
-              <text x="500" y="116" font-size="9" fill="#791F1F" text-anchor="middle">100% zero emissions</text>
-              <text x="50" y="174" font-size="9" fill="#9a9993" text-anchor="middle">2007</text>
-              <text x="190" y="174" font-size="9" fill="#9a9993" text-anchor="middle">2013</text>
-              <text x="330" y="174" font-size="9" fill="#9a9993" text-anchor="middle">2019</text>
-              <text x="470" y="174" font-size="9" fill="#9a9993" text-anchor="middle">2023</text>
-              <text x="12" y="30" font-size="9" fill="#9a9993">100%</text>
-              <text x="22" y="90" font-size="9" fill="#9a9993">50%</text>
-              <text x="28" y="155" font-size="9" fill="#9a9993">0%</text>
-            </svg>
-          </div>
-          <div class="legend-row" style="margin-bottom:8px;">
-            <div class="legend-item"><div class="legend-swatch" style="background:#378ADD"></div>BEV (electric)</div>
-            <div class="legend-item"><div class="legend-swatch" style="background:#1D9E75"></div>Hybrid (HEV/PHEV)</div>
-            <div class="legend-item"><div class="legend-swatch" style="background:#888780"></div>Fossil (petrol + diesel)</div>
-          </div>
-          <hr class="divider">
-          <div style="font-size:10px;color:var(--color-text-tertiary);">
-            <span class="int-badge badge-interactive"><i class="ti ti-hand-click" style="font-size:10px"></i> Interactive</span>
-            Filter by drive type · Hover for year detail · Annotated milestone markers are fixed (static)
-          </div>
-        </div>
-        <div class="footer-strip">
-          <button class="next-btn ghost" onclick="show('slow')">← Fleet stock</button>
-          <button class="next-btn" onclick="show('social')">Next: Used-car market →</button>
-        </div>
-      </div>
+    <div class="methodology">
+      <h3>Data &amp; methodology</h3>
+      <p>All figures come from three official MA23 / Statistik Austria registration tables for Vienna, converted from
+        Excel to JSON with a small Python script (<code>scripts/parse_data.py</code>) and bundled directly into this
+        app under <code>public/data/</code>.</p>
+      <ul class="source-list">
+        <li>Tab. 3.1.8 — Kraftfahrzeugbestand (fleet stock) nach Kraftstoffarten, Wien seit 2011</li>
+        <li>Tab. 3.1.9 — Neuzulassungen nach Kraftstoffarten, Wien seit 2007</li>
+        <li>Tab. 3.1.10 — Gebrauchtzulassungen nach Kraftstoffarten, Wien seit 2007</li>
+      </ul>
+      <h3>Interaction techniques used in this story</h3>
+      <ul>
+        <li><strong>Brushing</strong> — drag the time-window selector under the fleet stock chart (Section 1).</li>
+        <li><strong>Input widgets / dynamic querying</strong> — vehicle-category filter buttons (Sections 1–2) and the
+          absolute/100%-share toggle (Section 1).</li>
+        <li><strong>Filtering via legend</strong> — click legend entries to isolate or hide series (Sections 2 and 5).</li>
+        <li><strong>Zooming</strong> — scroll/pinch-zoom into a year range on the used-car bar chart (Section 3).</li>
+        <li><strong>Hover tooltips</strong> — exact values on demand across every chart.</li>
+      </ul>
     </div>
-    <p class="view-note">Line chart of shares from MA23 Dataset B (3.1.9). Two static annotation callouts highlight the 2020 turning point and the EU 2035 target. Filter buttons let readers isolate drive types.</p>
-  </div>
+  </section>
 
-  <!-- VIEW 4: SOCIAL/USED MARKET -->
-  <div id="v-social" class="view">
-    <div class="frame">
-      <div class="frame-header">
-        <div class="frame-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
-        <div class="url-bar">wien-emobility.at/#gebrauchtmarkt</div>
-        <span class="int-badge badge-interactive"><i class="ti ti-hand-click" style="font-size:11px"></i> Interactive</span>
-      </div>
-      <div class="page">
-        <div class="top-nav">
-          <span class="site-title">Wien fährt um</span>
-          <div class="nav-links">
-            <span class="nav-link">Bestand</span>
-            <span class="nav-link">Neuzulassungen</span>
-            <span class="nav-link active-link">Gebrauchtmarkt</span>
-            <span class="nav-link">Methodik</span>
-          </div>
-        </div>
-        <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
-        <div class="section-body">
-          <span class="section-label label-social">Section 3 of 3 · The social speed</span>
-          <div class="section-title">Used cars: when does the transition reach everyone?</div>
-          <p class="section-sub">Most private households buy used cars, not new ones. The used-car market is therefore the key indicator of when the e-mobility transition becomes truly accessible — beyond companies and high-income buyers.</p>
-          <div class="callout-strip" style="border-left-color:#BA7517;background:#FAEEDA;margin-bottom:12px;">
-            <div class="callout-headline" style="color:#633806;">The lag effect</div>
-            <div class="callout-text">A car registered new in 2021 typically enters the used market 3–5 years later. So the used-EV boom is still coming — and this chart shows its early signals.</div>
-          </div>
-          <div class="two-col" style="margin-bottom:12px;align-items:start;">
-            <div>
-              <div style="font-size:10px;color:var(--color-text-secondary);margin-bottom:6px;">Annual used registrations by drive type</div>
-              <div class="chart-area" style="height:180px;">
-                <svg width="100%" height="100%" viewBox="0 0 270 180">
-                  <line x1="30" y1="10" x2="30" y2="155" stroke="rgba(30,30,26,0.12)" stroke-width="0.5"/>
-                  <line x1="30" y1="155" x2="260" y2="155" stroke="rgba(30,30,26,0.12)" stroke-width="0.5"/>
-                  <rect x="42" y="60" width="16" height="95" rx="1" fill="#888780" opacity="0.7"/>
-                  <rect x="60" y="145" width="16" height="10" rx="1" fill="#1D9E75" opacity="0.8"/>
-                  <rect x="78" y="152" width="16" height="3" rx="1" fill="#378ADD" opacity="0.9"/>
-                  <rect x="104" y="55" width="16" height="100" rx="1" fill="#888780" opacity="0.7"/>
-                  <rect x="122" y="138" width="16" height="17" rx="1" fill="#1D9E75" opacity="0.8"/>
-                  <rect x="140" y="150" width="16" height="5" rx="1" fill="#378ADD" opacity="0.9"/>
-                  <rect x="166" y="52" width="16" height="103" rx="1" fill="#888780" opacity="0.7"/>
-                  <rect x="184" y="128" width="16" height="27" rx="1" fill="#1D9E75" opacity="0.8"/>
-                  <rect x="202" y="142" width="16" height="13" rx="1" fill="#378ADD" opacity="0.9"/>
-                  <rect x="228" y="48" width="16" height="107" rx="1" fill="#888780" opacity="0.5"/>
-                  <rect x="246" y="118" width="16" height="37" rx="1" fill="#1D9E75" opacity="0.5"/>
-                  <rect x="228" y="108" width="34" height="10" rx="1" fill="#378ADD" opacity="0.6"/>
-                  <text x="69" y="168" font-size="8" fill="#9a9993" text-anchor="middle">2019</text>
-                  <text x="131" y="168" font-size="8" fill="#9a9993" text-anchor="middle">2020</text>
-                  <text x="193" y="168" font-size="8" fill="#9a9993" text-anchor="middle">2022</text>
-                  <text x="237" y="168" font-size="8" fill="#9a9993" text-anchor="middle">2024</text>
-                  <text x="28" y="60" font-size="8" fill="#9a9993" text-anchor="end">60k</text>
-                  <text x="28" y="110" font-size="8" fill="#9a9993" text-anchor="end">30k</text>
-                  <rect x="195" y="93" width="62" height="17" rx="2" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.5"/>
-                  <text x="226" y="104" font-size="8" fill="#0C447C" text-anchor="middle">↑ BEV share rising</text>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <div style="font-size:10px;color:var(--color-text-secondary);margin-bottom:6px;">EV share: new vs. used registrations</div>
-              <div class="chart-area" style="height:180px;">
-                <svg width="100%" height="100%" viewBox="0 0 270 180">
-                  <line x1="30" y1="10" x2="30" y2="155" stroke="rgba(30,30,26,0.12)" stroke-width="0.5"/>
-                  <line x1="30" y1="155" x2="260" y2="155" stroke="rgba(30,30,26,0.12)" stroke-width="0.5"/>
-                  <path d="M30,148 C70,145 100,140 130,125 C160,108 190,80 230,40 C245,28 255,20 260,15" fill="none" stroke="#378ADD" stroke-width="1.8"/>
-                  <path d="M30,153 C70,153 100,152 130,150 C160,147 190,140 230,120 C245,112 255,105 260,98" fill="none" stroke="#BA7517" stroke-width="1.8" stroke-dasharray="5 3"/>
-                  <line x1="230" y1="40" x2="230" y2="120" stroke="rgba(30,30,26,0.22)" stroke-width="0.5" stroke-dasharray="3 2"/>
-                  <rect x="158" y="62" width="65" height="26" rx="2" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
-                  <text x="190" y="73" font-size="8" fill="#633806" text-anchor="middle" font-weight="500">Access gap</text>
-                  <text x="190" y="83" font-size="8" fill="#633806" text-anchor="middle">still large in 2024</text>
-                  <text x="30" y="169" font-size="8" fill="#9a9993" text-anchor="middle">2011</text>
-                  <text x="145" y="169" font-size="8" fill="#9a9993" text-anchor="middle">2017</text>
-                  <text x="260" y="169" font-size="8" fill="#9a9993" text-anchor="middle">2024</text>
-                  <text x="28" y="30" font-size="8" fill="#9a9993" text-anchor="end">30%</text>
-                  <text x="28" y="100" font-size="8" fill="#9a9993" text-anchor="end">10%</text>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="legend-row" style="margin-bottom:8px;">
-            <div class="legend-item"><div class="legend-swatch" style="background:#888780"></div>Fossil (used)</div>
-            <div class="legend-item"><div class="legend-swatch" style="background:#1D9E75"></div>Hybrid (used)</div>
-            <div class="legend-item"><div class="legend-swatch" style="background:#378ADD"></div>BEV (used)</div>
-            <div class="legend-item"><div class="legend-swatch" style="background:#BA7517;height:3px;margin-top:3px;"></div>Used EV % (comparison)</div>
-          </div>
-          <hr class="divider">
-          <div style="font-size:10px;color:var(--color-text-tertiary);">
-            <span class="int-badge badge-interactive"><i class="ti ti-hand-click" style="font-size:10px"></i> Interactive</span>
-            Hover bars for detail · Right chart: compare new vs. used EV share gap · Both use Dataset C (3.1.10)
-          </div>
-        </div>
-        <div class="footer-strip">
-          <button class="next-btn ghost" onclick="show('fast')">← New registrations</button>
-          <button class="next-btn" onclick="show('flow')">See navigation flow →</button>
-        </div>
-      </div>
-    </div>
-    <p class="view-note">Two-panel layout: grouped bar chart for raw volume, small line chart for the new-vs-used EV share gap. The "Access gap" annotation is the key social insight of section 3.</p>
-  </div>
+</main>
 
-  <!-- VIEW 5: FLOW DIAGRAM -->
-  <div id="v-flow" class="view">
-    <div style="border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:20px;background:var(--color-background-primary);">
-      <p style="font-size:12px;font-weight:500;margin-bottom:4px;">Navigation flow &amp; interaction map</p>
-      <p style="font-size:11px;color:var(--color-text-secondary);margin-bottom:16px;">How users move through the story, and which elements are interactive vs. static.</p>
-      <div class="flow-title">User journey (linear + open navigation)</div>
-      <div class="flow-steps">
-        <div class="flow-step">
-          <div class="flow-node">
-            <div class="flow-node-title">① Landing</div>
-            <div class="flow-node-sub">3 key stats + entry</div>
-          </div>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step">
-          <div class="flow-node" style="border-color:#378ADD;background:#E6F1FB;">
-            <div class="flow-node-title">② Fleet stock</div>
-            <div class="flow-node-sub">Slow speed · Area chart</div>
-          </div>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step">
-          <div class="flow-node" style="border-color:#639922;background:#EAF3DE;">
-            <div class="flow-node-title">③ New regs.</div>
-            <div class="flow-node-sub">Fast speed · Line chart</div>
-          </div>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step">
-          <div class="flow-node" style="border-color:#BA7517;background:#FAEEDA;">
-            <div class="flow-node-title">④ Used cars</div>
-            <div class="flow-node-sub">Social speed · Bar+line</div>
-          </div>
-        </div>
-      </div>
-      <p style="font-size:10px;color:var(--color-text-tertiary);margin:8px 0 16px;">Users can jump freely via the top navigation bar (non-linear). Progress bar shows position in the story.</p>
-      <div class="flow-title" style="margin-top:4px;">Interaction inventory</div>
-      <div>
-        <div class="int-row">
-          <div class="int-icon"><i class="ti ti-chart-area"></i></div>
-          <div class="int-text"><strong>Hover tooltips</strong> — all three charts show exact values on hover (year, category, count/share). Present on all three data views.</div>
-        </div>
-        <div class="int-row">
-          <div class="int-icon"><i class="ti ti-toggle-left"></i></div>
-          <div class="int-text"><strong>View toggle (Section 1)</strong> — "Absolute numbers" vs "Share (%)" on the fleet stock chart. Triggers chart re-render.</div>
-        </div>
-        <div class="int-row">
-          <div class="int-icon"><i class="ti ti-adjustments-horizontal"></i></div>
-          <div class="int-text"><strong>Year range slider (Section 1)</strong> — filters the fleet stock chart to a custom time window. Live update.</div>
-        </div>
-        <div class="int-row">
-          <div class="int-icon"><i class="ti ti-filter"></i></div>
-          <div class="int-text"><strong>Drive-type filter (Section 2)</strong> — filter line chart by BEV / Hybrid / Fossil / All. Multi-select buttons.</div>
-        </div>
-        <div class="int-row">
-          <div class="int-icon"><i class="ti ti-pin"></i></div>
-          <div class="int-text"><strong>Annotation callouts</strong> — key insight boxes (2020 turning point, EU 2035, "access gap") are <em>static</em> — always visible, part of the editorial narrative.</div>
-        </div>
-        <div class="int-row">
-          <div class="int-icon"><i class="ti ti-arrows-right-left"></i></div>
-          <div class="int-text"><strong>Next / Back navigation</strong> — footer buttons advance the linear story. Top nav allows non-linear jumping. Progress bar reflects current position.</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<footer>
+  Data: MA23 / Statistik Austria, Vienna · Tables 3.1.8 / 3.1.9 / 3.1.10 · Built with D3.js
+</footer>
 
-</div>
-
-<script>
-function show(id) {
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-  document.getElementById('v-' + id).classList.add('active');
-  const pills = ['landing','slow','fast','social','flow'];
-  const idx = pills.indexOf(id);
-  if (idx >= 0) document.querySelectorAll('.pill')[idx].classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

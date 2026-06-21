@@ -1,0 +1,1268 @@
+{
+  "key": "bestand",
+  "title": "Fahrzeugbestand",
+  "title_de": "Kraftfahrzeugbestand nach Kraftstoffarten bzw. Energiequellen in Wien seit 2011",
+  "years": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "categories": [
+    "Pkw",
+    "Krafträder",
+    "Lkw",
+    "Sonstige"
+  ],
+  "fuel_types": [
+    "Fossil",
+    "Hybrid",
+    "Elektro"
+  ],
+  "wide": [
+    {
+      "year": 2011,
+      "total": 829790,
+      "Pkw_Fossil": 672837,
+      "Pkw_Hybrid": 1579,
+      "Pkw_Elektro": 110,
+      "Krafträder_Fossil": 80801,
+      "Krafträder_Hybrid": 4,
+      "Krafträder_Elektro": 271,
+      "Lkw_Fossil": 62265,
+      "Lkw_Hybrid": 0,
+      "Lkw_Elektro": 42,
+      "Sonstige_Fossil": 11857,
+      "Sonstige_Hybrid": 1,
+      "Sonstige_Elektro": 23
+    },
+    {
+      "year": 2012,
+      "total": 837810,
+      "Pkw_Fossil": 677255,
+      "Pkw_Hybrid": 2100,
+      "Pkw_Elektro": 137,
+      "Krafträder_Fossil": 82910,
+      "Krafträder_Hybrid": 8,
+      "Krafträder_Elektro": 407,
+      "Lkw_Fossil": 63011,
+      "Lkw_Hybrid": 0,
+      "Lkw_Elektro": 64,
+      "Sonstige_Fossil": 11896,
+      "Sonstige_Hybrid": 0,
+      "Sonstige_Elektro": 22
+    },
+    {
+      "year": 2013,
+      "total": 841669,
+      "Pkw_Fossil": 678500,
+      "Pkw_Hybrid": 2705,
+      "Pkw_Elektro": 208,
+      "Krafträder_Fossil": 84211,
+      "Krafträder_Hybrid": 7,
+      "Krafträder_Elektro": 434,
+      "Lkw_Fossil": 63553,
+      "Lkw_Hybrid": 0,
+      "Lkw_Elektro": 133,
+      "Sonstige_Fossil": 11887,
+      "Sonstige_Hybrid": 2,
+      "Sonstige_Elektro": 29
+    },
+    {
+      "year": 2014,
+      "total": 844911,
+      "Pkw_Fossil": 679567,
+      "Pkw_Hybrid": 3352,
+      "Pkw_Elektro": 339,
+      "Krafträder_Fossil": 85021,
+      "Krafträder_Hybrid": 6,
+      "Krafträder_Elektro": 502,
+      "Lkw_Fossil": 63878,
+      "Lkw_Hybrid": 0,
+      "Lkw_Elektro": 209,
+      "Sonstige_Fossil": 12000,
+      "Sonstige_Hybrid": 8,
+      "Sonstige_Elektro": 29
+    },
+    {
+      "year": 2015,
+      "total": 848493,
+      "Pkw_Fossil": 680979,
+      "Pkw_Hybrid": 4047,
+      "Pkw_Elektro": 544,
+      "Krafträder_Fossil": 85781,
+      "Krafträder_Hybrid": 5,
+      "Krafträder_Elektro": 553,
+      "Lkw_Fossil": 64174,
+      "Lkw_Hybrid": 0,
+      "Lkw_Elektro": 342,
+      "Sonstige_Fossil": 12033,
+      "Sonstige_Hybrid": 8,
+      "Sonstige_Elektro": 27
+    },
+    {
+      "year": 2016,
+      "total": 858248,
+      "Pkw_Fossil": 686845,
+      "Pkw_Hybrid": 5068,
+      "Pkw_Elektro": 934,
+      "Krafträder_Fossil": 87213,
+      "Krafträder_Hybrid": 3,
+      "Krafträder_Elektro": 785,
+      "Lkw_Fossil": 64434,
+      "Lkw_Hybrid": 2,
+      "Lkw_Elektro": 548,
+      "Sonstige_Fossil": 12387,
+      "Sonstige_Hybrid": 2,
+      "Sonstige_Elektro": 27
+    },
+    {
+      "year": 2017,
+      "total": 870133,
+      "Pkw_Fossil": 693078,
+      "Pkw_Hybrid": 7040,
+      "Pkw_Elektro": 1539,
+      "Krafträder_Fossil": 88243,
+      "Krafträder_Hybrid": 3,
+      "Krafträder_Elektro": 1013,
+      "Lkw_Fossil": 65842,
+      "Lkw_Hybrid": 1,
+      "Lkw_Elektro": 583,
+      "Sonstige_Fossil": 12759,
+      "Sonstige_Hybrid": 2,
+      "Sonstige_Elektro": 30
+    },
+    {
+      "year": 2018,
+      "total": 881596,
+      "Pkw_Fossil": 697575,
+      "Pkw_Hybrid": 9453,
+      "Pkw_Elektro": 2260,
+      "Krafträder_Fossil": 89001,
+      "Krafträder_Hybrid": 2,
+      "Krafträder_Elektro": 1418,
+      "Lkw_Fossil": 67993,
+      "Lkw_Hybrid": 1,
+      "Lkw_Elektro": 735,
+      "Sonstige_Fossil": 13122,
+      "Sonstige_Hybrid": 2,
+      "Sonstige_Elektro": 34
+    },
+    {
+      "year": 2019,
+      "total": 890959,
+      "Pkw_Fossil": 697977,
+      "Pkw_Hybrid": 13114,
+      "Pkw_Elektro": 3869,
+      "Krafträder_Fossil": 89498,
+      "Krafträder_Hybrid": 1,
+      "Krafträder_Elektro": 1824,
+      "Lkw_Fossil": 70343,
+      "Lkw_Hybrid": 1,
+      "Lkw_Elektro": 892,
+      "Sonstige_Fossil": 13363,
+      "Sonstige_Hybrid": 39,
+      "Sonstige_Elektro": 38
+    },
+    {
+      "year": 2020,
+      "total": 899709,
+      "Pkw_Fossil": 692851,
+      "Pkw_Hybrid": 19708,
+      "Pkw_Elektro": 6260,
+      "Krafträder_Fossil": 91068,
+      "Krafträder_Hybrid": 1,
+      "Krafträder_Elektro": 2272,
+      "Lkw_Fossil": 72306,
+      "Lkw_Hybrid": 12,
+      "Lkw_Elektro": 1235,
+      "Sonstige_Fossil": 13863,
+      "Sonstige_Hybrid": 88,
+      "Sonstige_Elektro": 45
+    },
+    {
+      "year": 2021,
+      "total": 913263,
+      "Pkw_Fossil": 683799,
+      "Pkw_Hybrid": 29694,
+      "Pkw_Elektro": 11607,
+      "Krafträder_Fossil": 92276,
+      "Krafträder_Hybrid": 1,
+      "Krafträder_Elektro": 3217,
+      "Lkw_Fossil": 76113,
+      "Lkw_Hybrid": 65,
+      "Lkw_Elektro": 1983,
+      "Sonstige_Fossil": 14353,
+      "Sonstige_Hybrid": 96,
+      "Sonstige_Elektro": 59
+    },
+    {
+      "year": 2022,
+      "total": 916398,
+      "Pkw_Fossil": 667944,
+      "Pkw_Hybrid": 40359,
+      "Pkw_Elektro": 17822,
+      "Krafträder_Fossil": 94360,
+      "Krafträder_Hybrid": 0,
+      "Krafträder_Elektro": 3009,
+      "Lkw_Fossil": 75005,
+      "Lkw_Hybrid": 145,
+      "Lkw_Elektro": 2609,
+      "Sonstige_Fossil": 14950,
+      "Sonstige_Hybrid": 116,
+      "Sonstige_Elektro": 79
+    },
+    {
+      "year": 2023,
+      "total": 924460,
+      "Pkw_Fossil": 650915,
+      "Pkw_Hybrid": 52268,
+      "Pkw_Elektro": 27764,
+      "Krafträder_Fossil": 95442,
+      "Krafträder_Hybrid": 0,
+      "Krafträder_Elektro": 3280,
+      "Lkw_Fossil": 75001,
+      "Lkw_Hybrid": 232,
+      "Lkw_Elektro": 4107,
+      "Sonstige_Fossil": 15229,
+      "Sonstige_Hybrid": 114,
+      "Sonstige_Elektro": 108
+    },
+    {
+      "year": 2024,
+      "total": 932352,
+      "Pkw_Fossil": 634673,
+      "Pkw_Hybrid": 65137,
+      "Pkw_Elektro": 36019,
+      "Krafträder_Fossil": 97348,
+      "Krafträder_Hybrid": 0,
+      "Krafträder_Elektro": 3418,
+      "Lkw_Fossil": 74442,
+      "Lkw_Hybrid": 249,
+      "Lkw_Elektro": 5293,
+      "Sonstige_Fossil": 15487,
+      "Sonstige_Hybrid": 102,
+      "Sonstige_Elektro": 184
+    }
+  ],
+  "long": [
+    {
+      "year": 2011,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 672837
+    },
+    {
+      "year": 2011,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 1579
+    },
+    {
+      "year": 2011,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 110
+    },
+    {
+      "year": 2011,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 80801
+    },
+    {
+      "year": 2011,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 4
+    },
+    {
+      "year": 2011,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 271
+    },
+    {
+      "year": 2011,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 62265
+    },
+    {
+      "year": 2011,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 0
+    },
+    {
+      "year": 2011,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 42
+    },
+    {
+      "year": 2011,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 11857
+    },
+    {
+      "year": 2011,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 1
+    },
+    {
+      "year": 2011,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 23
+    },
+    {
+      "year": 2012,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 677255
+    },
+    {
+      "year": 2012,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 2100
+    },
+    {
+      "year": 2012,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 137
+    },
+    {
+      "year": 2012,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 82910
+    },
+    {
+      "year": 2012,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 8
+    },
+    {
+      "year": 2012,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 407
+    },
+    {
+      "year": 2012,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 63011
+    },
+    {
+      "year": 2012,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 0
+    },
+    {
+      "year": 2012,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 64
+    },
+    {
+      "year": 2012,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 11896
+    },
+    {
+      "year": 2012,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 0
+    },
+    {
+      "year": 2012,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 22
+    },
+    {
+      "year": 2013,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 678500
+    },
+    {
+      "year": 2013,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 2705
+    },
+    {
+      "year": 2013,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 208
+    },
+    {
+      "year": 2013,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 84211
+    },
+    {
+      "year": 2013,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 7
+    },
+    {
+      "year": 2013,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 434
+    },
+    {
+      "year": 2013,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 63553
+    },
+    {
+      "year": 2013,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 0
+    },
+    {
+      "year": 2013,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 133
+    },
+    {
+      "year": 2013,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 11887
+    },
+    {
+      "year": 2013,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 2
+    },
+    {
+      "year": 2013,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 29
+    },
+    {
+      "year": 2014,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 679567
+    },
+    {
+      "year": 2014,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 3352
+    },
+    {
+      "year": 2014,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 339
+    },
+    {
+      "year": 2014,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 85021
+    },
+    {
+      "year": 2014,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 6
+    },
+    {
+      "year": 2014,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 502
+    },
+    {
+      "year": 2014,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 63878
+    },
+    {
+      "year": 2014,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 0
+    },
+    {
+      "year": 2014,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 209
+    },
+    {
+      "year": 2014,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 12000
+    },
+    {
+      "year": 2014,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 8
+    },
+    {
+      "year": 2014,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 29
+    },
+    {
+      "year": 2015,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 680979
+    },
+    {
+      "year": 2015,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 4047
+    },
+    {
+      "year": 2015,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 544
+    },
+    {
+      "year": 2015,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 85781
+    },
+    {
+      "year": 2015,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 5
+    },
+    {
+      "year": 2015,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 553
+    },
+    {
+      "year": 2015,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 64174
+    },
+    {
+      "year": 2015,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 0
+    },
+    {
+      "year": 2015,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 342
+    },
+    {
+      "year": 2015,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 12033
+    },
+    {
+      "year": 2015,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 8
+    },
+    {
+      "year": 2015,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 27
+    },
+    {
+      "year": 2016,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 686845
+    },
+    {
+      "year": 2016,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 5068
+    },
+    {
+      "year": 2016,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 934
+    },
+    {
+      "year": 2016,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 87213
+    },
+    {
+      "year": 2016,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 3
+    },
+    {
+      "year": 2016,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 785
+    },
+    {
+      "year": 2016,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 64434
+    },
+    {
+      "year": 2016,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 2
+    },
+    {
+      "year": 2016,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 548
+    },
+    {
+      "year": 2016,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 12387
+    },
+    {
+      "year": 2016,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 2
+    },
+    {
+      "year": 2016,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 27
+    },
+    {
+      "year": 2017,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 693078
+    },
+    {
+      "year": 2017,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 7040
+    },
+    {
+      "year": 2017,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 1539
+    },
+    {
+      "year": 2017,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 88243
+    },
+    {
+      "year": 2017,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 3
+    },
+    {
+      "year": 2017,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 1013
+    },
+    {
+      "year": 2017,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 65842
+    },
+    {
+      "year": 2017,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 1
+    },
+    {
+      "year": 2017,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 583
+    },
+    {
+      "year": 2017,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 12759
+    },
+    {
+      "year": 2017,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 2
+    },
+    {
+      "year": 2017,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 30
+    },
+    {
+      "year": 2018,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 697575
+    },
+    {
+      "year": 2018,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 9453
+    },
+    {
+      "year": 2018,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 2260
+    },
+    {
+      "year": 2018,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 89001
+    },
+    {
+      "year": 2018,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 2
+    },
+    {
+      "year": 2018,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 1418
+    },
+    {
+      "year": 2018,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 67993
+    },
+    {
+      "year": 2018,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 1
+    },
+    {
+      "year": 2018,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 735
+    },
+    {
+      "year": 2018,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 13122
+    },
+    {
+      "year": 2018,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 2
+    },
+    {
+      "year": 2018,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 34
+    },
+    {
+      "year": 2019,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 697977
+    },
+    {
+      "year": 2019,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 13114
+    },
+    {
+      "year": 2019,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 3869
+    },
+    {
+      "year": 2019,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 89498
+    },
+    {
+      "year": 2019,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 1
+    },
+    {
+      "year": 2019,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 1824
+    },
+    {
+      "year": 2019,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 70343
+    },
+    {
+      "year": 2019,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 1
+    },
+    {
+      "year": 2019,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 892
+    },
+    {
+      "year": 2019,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 13363
+    },
+    {
+      "year": 2019,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 39
+    },
+    {
+      "year": 2019,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 38
+    },
+    {
+      "year": 2020,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 692851
+    },
+    {
+      "year": 2020,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 19708
+    },
+    {
+      "year": 2020,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 6260
+    },
+    {
+      "year": 2020,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 91068
+    },
+    {
+      "year": 2020,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 1
+    },
+    {
+      "year": 2020,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 2272
+    },
+    {
+      "year": 2020,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 72306
+    },
+    {
+      "year": 2020,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 12
+    },
+    {
+      "year": 2020,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 1235
+    },
+    {
+      "year": 2020,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 13863
+    },
+    {
+      "year": 2020,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 88
+    },
+    {
+      "year": 2020,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 45
+    },
+    {
+      "year": 2021,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 683799
+    },
+    {
+      "year": 2021,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 29694
+    },
+    {
+      "year": 2021,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 11607
+    },
+    {
+      "year": 2021,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 92276
+    },
+    {
+      "year": 2021,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 1
+    },
+    {
+      "year": 2021,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 3217
+    },
+    {
+      "year": 2021,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 76113
+    },
+    {
+      "year": 2021,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 65
+    },
+    {
+      "year": 2021,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 1983
+    },
+    {
+      "year": 2021,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 14353
+    },
+    {
+      "year": 2021,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 96
+    },
+    {
+      "year": 2021,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 59
+    },
+    {
+      "year": 2022,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 667944
+    },
+    {
+      "year": 2022,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 40359
+    },
+    {
+      "year": 2022,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 17822
+    },
+    {
+      "year": 2022,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 94360
+    },
+    {
+      "year": 2022,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 0
+    },
+    {
+      "year": 2022,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 3009
+    },
+    {
+      "year": 2022,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 75005
+    },
+    {
+      "year": 2022,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 145
+    },
+    {
+      "year": 2022,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 2609
+    },
+    {
+      "year": 2022,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 14950
+    },
+    {
+      "year": 2022,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 116
+    },
+    {
+      "year": 2022,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 79
+    },
+    {
+      "year": 2023,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 650915
+    },
+    {
+      "year": 2023,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 52268
+    },
+    {
+      "year": 2023,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 27764
+    },
+    {
+      "year": 2023,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 95442
+    },
+    {
+      "year": 2023,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 0
+    },
+    {
+      "year": 2023,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 3280
+    },
+    {
+      "year": 2023,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 75001
+    },
+    {
+      "year": 2023,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 232
+    },
+    {
+      "year": 2023,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 4107
+    },
+    {
+      "year": 2023,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 15229
+    },
+    {
+      "year": 2023,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 114
+    },
+    {
+      "year": 2023,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 108
+    },
+    {
+      "year": 2024,
+      "category": "Pkw",
+      "fuel": "Fossil",
+      "value": 634673
+    },
+    {
+      "year": 2024,
+      "category": "Pkw",
+      "fuel": "Hybrid",
+      "value": 65137
+    },
+    {
+      "year": 2024,
+      "category": "Pkw",
+      "fuel": "Elektro",
+      "value": 36019
+    },
+    {
+      "year": 2024,
+      "category": "Krafträder",
+      "fuel": "Fossil",
+      "value": 97348
+    },
+    {
+      "year": 2024,
+      "category": "Krafträder",
+      "fuel": "Hybrid",
+      "value": 0
+    },
+    {
+      "year": 2024,
+      "category": "Krafträder",
+      "fuel": "Elektro",
+      "value": 3418
+    },
+    {
+      "year": 2024,
+      "category": "Lkw",
+      "fuel": "Fossil",
+      "value": 74442
+    },
+    {
+      "year": 2024,
+      "category": "Lkw",
+      "fuel": "Hybrid",
+      "value": 249
+    },
+    {
+      "year": 2024,
+      "category": "Lkw",
+      "fuel": "Elektro",
+      "value": 5293
+    },
+    {
+      "year": 2024,
+      "category": "Sonstige",
+      "fuel": "Fossil",
+      "value": 15487
+    },
+    {
+      "year": 2024,
+      "category": "Sonstige",
+      "fuel": "Hybrid",
+      "value": 102
+    },
+    {
+      "year": 2024,
+      "category": "Sonstige",
+      "fuel": "Elektro",
+      "value": 184
+    }
+  ]
+}
